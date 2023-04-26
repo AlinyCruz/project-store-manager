@@ -2,15 +2,14 @@
 // const snakeize = require('snakeize');
 const connection = require('./connection');
 
-const findAll = async () => {
+const listAll = async () => {
   const [result] = await connection.execute(
     'SELECT * FROM StoreManager.products ORDER BY id ASC',
   );
-  console.log(result);
-  return [result];
+  return result;
 };
 
-const findById = async (productId) => {
+const listById = async (productId) => {
   const [[product]] = await connection.execute(
     'SELECT * FROM StoreManager.products WHERE id = ?',
     [productId],
@@ -34,6 +33,6 @@ const findById = async (productId) => {
 // };
 
 module.exports = {
-  findAll,
-  findById,
+  listAll,
+  listById,
 };
