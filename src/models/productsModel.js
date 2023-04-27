@@ -16,22 +16,18 @@ const listById = async (productId) => {
   );
   return product;
 };
-// const insert = async (products) => {
-//   const columns = Object.keys(snakeize(products)).join(', ');
 
-//   const placeholders = Object.keys(products)
-//     .map((_key) => '?')
-//     .join(', ');
+const insert = async (name) => {
+  const [{ insertId }] = await connection.execute(
+    'INSERT INTO StoreManager.products (name) VALUE (?)',
+    [name],
+  );
 
-//   const [{ insertId }] = await connection.execute(
-//     `INSERT INTO products (${columns}) VALUE (${placeholders})`,
-//     [...Object.values(products)],
-//   );
-
-//   return insertId;
-// };
+  return insertId;
+};
 
 module.exports = {
   listAll,
   listById,
+  insert,
 };
