@@ -16,7 +16,6 @@ const listById = async (productId) => {
   );
   return product;
 };
-
 // const insert = async (products) => {
 //   const columns = Object.keys(snakeize(products)).join(', ');
 

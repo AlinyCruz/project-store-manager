@@ -1,18 +1,26 @@
 const productsMockModel = [
   {
     "id": 1,
-    "name": "Martelo de Thor"
+    "name": "Aline Cruz"
   },
   {
     "id": 2,
-    "name": "Traje de encolhimento"
+    "name": "Bruno Cruz"
   },
   {
     "id": 3,
-    "name": "Escudo do Capitão América"
+    "name": "Guilherme Cruz"
   }
+]
+
+const productIdMockModel = [
+  {
+    "id": 1,
+    "name": "Aline Cruz"
+  },
 ]
 
 module.exports = {
   productsMockModel,
+  productIdMockModel
 };

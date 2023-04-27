@@ -1,13 +1,26 @@
-const validName = "Martelo de Thor";
-// const WAITING_PRODUCT = 1;
-
 const productsMockServices = [
   {
     "id": 1,
-    "name": validName,
+    "name": "Aline Cruz"
+  },
+  {
+    "id": 2,
+    "name": "Bruno Cruz"
+  },
+  {
+    "id": 3,
+    "name": "Guilherme Cruz"
   }
+]
+
+const productIdMockServices = [
+  {
+    "id": 1,
+    "name": "Aline Cruz"
+  },
 ]
 
 module.exports = {
   productsMockServices,
+  productIdMockServices
 };

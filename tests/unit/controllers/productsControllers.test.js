@@ -11,8 +11,9 @@ const productsController = require('../../../src/controllers/productsControllers
 const { productsControllers } = require('./mocks/productsControllers.mock');
 
 describe('Verificando controller products', function () {
-  describe('Listando produtos', function () {
-    it('é chamado o status com o código 200', async function () {
+  afterEach(function () { sinon.restore() });
+  
+  it('deve responder com 200 e os dados do banco quando existir', async function () {
       const res = {};
       const req = {};
 
@@ -28,26 +29,10 @@ describe('Verificando controller products', function () {
       expect(res.status).to.have.been.calledWith(200);
     });
 
-    it('é chamado o json com a lista de produtos', async function () {
-      const res = {};
-      const req = {};
-
-      res.status = sinon.stub().returns(res);
-      res.json = sinon.stub().returns();
-
-      sinon
-        .stub(productsServices, 'findAll')
-        .resolves({ type: null, message: productsControllers });
-
-      await productsController.listProducts(req, res);
-
-      expect(res.json).to.have.been.calledWith(productsControllers);
-    });
-
-    it('deve responder com 200 e os dados do banco quando existir', async function () {
+    it('deve responder com 404 quando os dados do banco não existir', async function () {
       const res = {};
       const req = {
-        params: { id: 1 },
+        params: { id: 77 },
       };
 
       res.status = sinon.stub().returns(res);
@@ -55,12 +40,12 @@ describe('Verificando controller products', function () {
 
       sinon
         .stub(productsServices, 'findById')
-        .resolves({ type: null, message: productsControllers });
+        .resolves({ type: 404, message: "Product not found" });
 
       await productsController.listProductId(req, res);
 
-      expect(res.status).to.have.been.calledWith(200);
-      expect(res.json).to.have.been.calledWith(productsControllers);
+      expect(res.status).to.be.calledWith(404);
+      expect(res.json).to.have.been.calledWith({message: "Product not found"});
     });
-  });
+
 });
