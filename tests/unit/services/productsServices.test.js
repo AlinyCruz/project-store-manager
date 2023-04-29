@@ -27,5 +27,3 @@ describe('Verificando service de produtos', function () {
     expect(result).to.be.equal();
   });
 });
-
-  

@@ -15,8 +15,17 @@ const createProduct = async (name) => {
   return { id, name };
 };
 
+const updateService = async (id, productName) => {
+  const productsId = await productsModel.listById(id);
+  if (!productsId) return { type: 'NOT FOUND' };
+  if (productName.length < 5) return { type: 'NAME INVALID' };
+  await productsModel.updateProducts(id, productName);
+  return { id, name: productName };
+};
+
 module.exports = {
   findAll,
   findById,
   createProduct,
+  updateService,
 };

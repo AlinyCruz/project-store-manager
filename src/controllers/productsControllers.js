@@ -30,8 +30,24 @@ const createNewProduct = async (req, res) => {
   res.status(201).json(newProduct);
 };
 
+const updateController = async (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+  const productId = await productsService.updateService(id, name);
+
+  if (productId.type === 'NOT FOUND') {
+    return res.status(404).json({ message: 'Product not found' });
+  }
+
+  if (productId.type === 'NAME INVALID') {
+    return res.status(422).json({ message: '"name" length must be at least 5 characters long' });
+  }
+   return res.status(200).json(productId);
+};
+
 module.exports = {
   listProducts,
   listProductId,
   createNewProduct,
+  updateController,
 };
