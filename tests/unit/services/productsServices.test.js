@@ -17,7 +17,7 @@ describe('Verificando service de produtos', function () {
     // assert
     expect(result).to.be.equal(productsMockServices);
   });
-    
+
   it('retorna um erro caso o produto não existe', async function () {
     // arrange
     sinon.stub(productsModel, 'listById').resolves(undefined);
@@ -25,5 +25,14 @@ describe('Verificando service de produtos', function () {
     const result = await productsServices.findById(777); 
     // assert
     expect(result).to.be.equal();
+  });
+
+  it('retorna a criação de um produto', async function () {
+    // arrange
+    sinon.stub(productsModel, 'insert').resolves(2);
+    // act
+    const result = await productsServices.createProduct('Nataly');
+    // assert
+    expect(result).to.be.deep.equal({ id: 2, name: 'Nataly' });
   });
 });
