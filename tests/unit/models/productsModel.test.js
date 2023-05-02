@@ -25,4 +25,14 @@ describe('Testes de unidade do model de produtos', function () {
     // Assert
     expect(result).to.deep.equal(productIdMockModel);
   });
+
+
+  it('retorna Id de um produto', async function () {
+    // Arrange
+    sinon.stub(connection, 'execute').resolves([{ insertId: 3 }]);
+    // Act
+    const result = await productsModel.insert('Nataly');
+    // Assert
+    expect(result).to.deep.equal(3);
+  });
 });
