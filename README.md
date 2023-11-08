@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Bem vindo(a) ao repositório do projeto Store Manage!
 
 > Neste projeto foi desenvolvido minha primeira API utilizando a arquitetura MSC (model-service-controller)! A API que foi construída é um sistema de gerenciamento de vendas no formato dropshipping na qual é possível criar, visualizar, deletar e atualizar produtos e vendas. Foi utilizado o banco de dados MySQL para a gestão de dados. Além disso, a API é RESTful.
@@ -17,3 +18,6 @@
     </td>
   </tr>
 </table>
+=======
+
+>>>>>>> a39984f2db5acc426bbbb2b2770ac4f55f52a433
