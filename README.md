@@ -1,10 +1,19 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Bem vindo(a) ao repositório do projeto Store Manage!
+
+> Neste projeto foi desenvolvido minha primeira API utilizando a arquitetura MSC (model-service-controller)! A API que foi construída é um sistema de gerenciamento de vendas no formato dropshipping na qual é possível criar, visualizar, deletar e atualizar produtos e vendas. Foi utilizado o banco de dados MySQL para a gestão de dados. Além disso, a API é RESTful.
+
+## 🤝 Desenvolvedora
+
+<table>
+  <tr>
+    <td align="center" style="font-family: Franklin Gothic Medium, sans-serif;">
+      <a href="https://github.com/AlinyCruz">
+        <img src="https://avatars.githubusercontent.com/u/108740455?v=4" width="100px;" alt="Foto de Aline no GitHub" style="border-radius:50%;"/><br>
+        <sub>
+          <b style="font-size:15px;">
+            Aline Cruz</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
